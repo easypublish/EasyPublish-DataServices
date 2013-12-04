@@ -26,7 +26,7 @@ Installation
     .. code-block:: bash
     
         git clone https://github.com/easypublish/EasyPublish-DataServices.git
-        cd EasyPublish-DataServices
+        cd EasyPublish-DataServices/ezpublish-submitters
 
 
 5.  Install Kanso dependencies
