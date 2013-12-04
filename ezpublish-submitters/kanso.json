@@ -1,0 +1,12 @@
+{
+    "name": "ezpublish-submitters",
+    "version": "0.0.1",
+    "description": "View to expose docs by submitter email and node identity",
+    "modules":["lib","views"],
+    "attachments": [],
+    "load": "lib/app",
+    "dependencies": {
+        "modules": null,
+        "properties": null
+    }
+}
