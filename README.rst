@@ -65,12 +65,12 @@ The reccomended way to use this data service is using the following algorithm:
 
 1.  Determine the email address of the submitter.
 
+
 2.  Discover the node identifier
 
     .. code-block:: bash
 
         curl "http://lrdev.local/services"
-
 
     It should return a response similar to this:
 
@@ -84,15 +84,14 @@ The reccomended way to use this data service is using the following algorithm:
             "node_name": "Node@http://lrdev.local"
         }
 
-
     You need the "node_id" property from the response.
 
-3. Discover what documents the user have been published at this node:
-   
-   .. code-block:: bash
+
+3.  Discover what documents the user have been published at this node
+
+    .. code-block:: bash
 
         curl 'http://lrdev.local/extract/ezpublish-submitters/resource-by-discriminator?ids_only&discriminator=\["c8c0bf5288f4497ca683ba3111bc6800","jim.klo@learningregistry.org"\]'  
-
 
     The response will look something like this:
 
@@ -162,10 +161,10 @@ The reccomended way to use this data service is using the following algorithm:
             }]
         }
 
-
     Each of the values withing the "resource_data" properties is a "doc_ID" property for a Learning Registry Envelope.
 
     More information about data services is available in the `Data Services Tutorial`_.
+
 
 4.  For each "doc_ID", you can either fetch each one individualy using a GET request using:
     
@@ -173,13 +172,11 @@ The reccomended way to use this data service is using the following algorithm:
 
         curl -XGET "http://lrdev.local/obtain?by_doc_ID=true&request_ID=d3ee1b48d8614054a427316cb8f5815e"
 
-
     assuming "d3ee1b48d8614054a427316cb8f5815e" is the "doc_ID". Or you can perform bulk operations using a POST request using:
 
     .. code-block: bash
 
         curl -XPOST -H'Content-Type: application/json' "http://lrdev.local/obtain" --data-binary '{"by_doc_ID":true,"request_IDs":["2b76648bd6aa48a0ab2edfa7e0e8d2b7","a686dfb9246d47d6bb108179d1952277"]}'
-
 
     where "request_IDs" is a list of "doc_ID". 
 
