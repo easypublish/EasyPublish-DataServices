@@ -172,11 +172,13 @@ The reccomended way to use this data service is using the following algorithm:
 
         curl -XGET "http://lrdev.local/obtain?by_doc_ID=true&request_ID=d3ee1b48d8614054a427316cb8f5815e"
 
+
     assuming "d3ee1b48d8614054a427316cb8f5815e" is the "doc_ID". Or you can perform bulk operations using a POST request using:
 
-    .. code-block: bash
+    .. code-block:: bash
 
         curl -XPOST -H'Content-Type: application/json' "http://lrdev.local/obtain" --data-binary '{"by_doc_ID":true,"request_IDs":["2b76648bd6aa48a0ab2edfa7e0e8d2b7","a686dfb9246d47d6bb108179d1952277"]}'
+
 
     where "request_IDs" is a list of "doc_ID". 
 
